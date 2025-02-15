@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>onsubmit for table creation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+    if (g_form.isNewRecord()) {
+        var sys = g_form.getUniqueValue();
+        var ga = new GlideAjax("x_1583830_it_ass_0.createRecord");
+        ga.addParam("sysparm_name", "cmdbTable");
+        ga.addParam("sys", sys);
+        ga.getXMLAnswer(result);
+
+    }
+}
+
+function result(response) {
+    if (response == 'true') {
+        return true;
+
+    } else {
+        return false;
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-30 16:41:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8441eda1837a5210a2b8e270ceaad389</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>onsubmit for table creation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT ASSET MANAGEMENT" source="x_1583830_it_ass_0">dc0abc1f836a5a10a2b8e270ceaad34e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT ASSET MANAGEMENT">dc0abc1f836a5a10a2b8e270ceaad34e</sys_scope>
+        <sys_update_name>sys_script_client_8441eda1837a5210a2b8e270ceaad389</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-01 06:39:57</sys_updated_on>
+        <table>x_1583830_it_ass_0_asset_request</table>
+        <type>onSubmit</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
